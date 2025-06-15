@@ -7,33 +7,21 @@ struct node{
   struct node* addatemp(struct node* head,int data)
   {
   struct node* temp = malloc(sizeof(struct node)); 
-
-temp->data=data;
-
-temp->link=NULL;
- head=temp;
-
-return head;
+    temp->data=data;
+    temp->link=NULL;
+    head=temp;
+    return head;
 }
-
 struct node* addatend (struct node* head, int data)
 {
-
-struct node *tp;
-
-struct node* temp = malloc (sizeof (struct node));
-
-temp->data=data;
-
-temp->link=NULL;
-
-tp=head;
-
-while (tp->link!= NULL)
-{
-tp = tp->link;
-
-}
+    struct node *tp;
+    struct node* temp = malloc (sizeof (struct node));
+    temp->data=data;
+    temp->link=NULL;
+    tp=head;
+    while (tp->link!= NULL){
+    tp = tp->link;
+    }
 tp->link=temp;
 return head;
 }
@@ -47,16 +35,12 @@ while(pos>1)
 t=t->link;
 pos--;
 }
-
 tt=t->link;
 t->link=tt->link;
 free(tt);
 tt=NULL;
-
 return head ;
 }
-
-
 struct node* createlist (struct node* head)
 {
 int n,data,i;
@@ -77,10 +61,8 @@ int main()
 {
 struct node* head = NULL;
     struct node* ptr;
-
     head =createlist(head);
     ptr = head;
-
     while (ptr != NULL) {
         printf("%d\t",ptr->data);
         ptr = ptr->link;
